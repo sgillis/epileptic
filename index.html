@@ -64,26 +64,6 @@
     <!-- </div> -->
     <!-- <video id="receiverVideoElement"></video> -->
 
-    function changeBackground(color) {
-        document.body.style.background = color;
-    }
-
-    function animateSlides(currentPosition2, numberOfSlides){
-        if(currentPosition2 < numberOfSlides){
-            currentPosition2 = currentPosition2 + 1;
-            if(currentPosition2 % 2 == 0){
-                changeBackground('red');
-            } else {
-                changeBackground('white');
-            }
-            var foo = (function(pos){
-                return function(){
-                    animateSlides(pos, numberOfSlides);
-                };
-            })(currentPosition2);
-            setTimeout(foo, 300);
-        }
-    }
 
     <script type="text/javascript">
         "use strict";
@@ -99,6 +79,27 @@
 
         function setHudMessage(elementId, message) {
             document.getElementById(elementId).innerHTML = '' + JSON.stringify(message);
+        }
+
+        function changeBackground(color) {
+            document.body.style.background = color;
+        }
+
+        function animateSlides(currentPosition2, numberOfSlides){
+            if(currentPosition2 < numberOfSlides){
+                currentPosition2 = currentPosition2 + 1;
+                if(currentPosition2 % 2 == 0){
+                    changeBackground('red');
+                } else {
+                    changeBackground('white');
+                }
+                var foo = (function(pos){
+                    return function(){
+                        animateSlides(pos, numberOfSlides);
+                    };
+                })(currentPosition2);
+                setTimeout(foo, 300);
+            }
         }
 
         window.onload = function() {
