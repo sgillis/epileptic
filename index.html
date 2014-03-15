@@ -365,8 +365,10 @@
                 } else if(event['data']==='hide') {
                     document.getElementById('messages').style.display = 'none';
                 } else if(event['data']==='red') {
+                    changeBackground('red');
                     changeCircleColor('red');
                 } else if(event['data']==='white'){
+                    changeBackground('white');
                     changeCircleColor('white');
                 }
             }
