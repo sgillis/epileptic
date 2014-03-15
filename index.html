@@ -330,8 +330,10 @@
                 console.log(event['data']);
                 if(event['data']==='show') {
                     document.getElementById('messages').style.display = 'block';
-                } else {
+                } else if(event['data']==='hide') {
                     document.getElementById('messages').style.display = 'none';
+                } else {
+                    setHudMessage('messageBusMessage', event);
                 }
             }
 
