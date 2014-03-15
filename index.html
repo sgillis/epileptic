@@ -85,7 +85,7 @@
             document.body.style.background = color;
         }
 
-        function animateSlides(currentPosition2, numberOfSlides){
+        function animateSlides(currentPosition2, numberOfSlides, milliseconds){
             if(currentPosition2 < numberOfSlides){
                 currentPosition2 = currentPosition2 + 1;
                 if(currentPosition2 % 2 == 0){
@@ -98,7 +98,7 @@
                         animateSlides(pos, numberOfSlides);
                     };
                 })(currentPosition2);
-                setTimeout(foo, 300);
+                setTimeout(foo, milliseconds);
             }
         }
 
