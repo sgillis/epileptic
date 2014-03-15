@@ -332,8 +332,10 @@
                     document.getElementById('messages').style.display = 'block';
                 } else if(event['data']==='hide') {
                     document.getElementById('messages').style.display = 'none';
-                } else {
-                    setHudMessage('messageBusMessage', event);
+                } else if(event['data']==='red') {
+                    changeBackground('red');
+                } else if(event['data']==='white'){
+                    changeBackground('white');
                 }
             }
 
