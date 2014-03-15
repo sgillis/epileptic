@@ -99,10 +99,8 @@ limitations under the License.
             document.body.style.background = color;
         }
 
-        var numberOfSlides = 100;
-        function animateSlides(currentPosition2){
+        function animateSlides(currentPosition2, numberOfSlides){
             if(currentPosition2 < numberOfSlides){
-                alert(currentPosition2);
                 currentPosition2 = currentPosition2 + 1;
                 if(currentPosition2 % 2 == 0){
                     changeBackground('red');
@@ -111,7 +109,7 @@ limitations under the License.
                 }
                 var foo = (function(pos){
                     return function(){
-                        animateSlides(pos);
+                        animateSlides(pos, numberOfSlides);
                     };
                 })(currentPosition2);
                 setTimeout(foo, 300);
