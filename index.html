@@ -58,10 +58,6 @@
         window.mediaPlayer = null;
         window.connectedCastSenders = []; // {senderId:'', channel:obj}
 
-        function setHudMessage(elementId, message) {
-            document.getElementById(elementId).innerHTML = '' + JSON.stringify(message);
-        }
-
         function changeBackground(color) {
             document.body.style.background = color;
         }
